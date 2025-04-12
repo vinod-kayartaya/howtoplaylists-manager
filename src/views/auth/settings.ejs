@@ -1,0 +1,103 @@
+<%- include('../partials/header') %>
+
+<div class="row mb-4">
+  <div class="col-md-8">
+    <h1>Admin Settings</h1>
+  </div>
+  <div class="col-md-4 text-end">
+    <a href="/" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Back to Home
+    </a>
+  </div>
+</div>
+
+<% if (success && success.length > 0) { %>
+  <div class="alert alert-success alert-dismissible fade show">
+    <%= success %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+  <div class="alert alert-danger alert-dismissible fade show">
+    <%= error %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Change Password</h5>
+      </div>
+      <div class="card-body">
+        <form action="/auth/change-password" method="POST">
+          <div class="mb-3">
+            <label for="currentPassword" class="form-label">Current Password</label>
+            <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="newPassword" class="form-label">New Password</label>
+            <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+          </div>
+          
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Change Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Two-Factor Authentication</h5>
+      </div>
+      <div class="card-body">
+        <% if (twoFactorEnabled) { %>
+          <div class="alert alert-success">
+            <i class="bi bi-shield-check"></i> Two-factor authentication is currently <strong>enabled</strong>.
+          </div>
+          
+          <p>
+            Your account is protected with an additional layer of security.
+            You need to enter a verification code from your Google Authenticator app when logging in.
+          </p>
+          
+          <form action="/auth/disable-2fa" method="POST">
+            <div class="d-grid">
+              <button type="submit" class="btn btn-danger">
+                <i class="bi bi-shield-x"></i> Disable Two-Factor Authentication
+              </button>
+            </div>
+          </form>
+        <% } else { %>
+          <div class="alert alert-warning">
+            <i class="bi bi-shield-exclamation"></i> Two-factor authentication is currently <strong>disabled</strong>.
+          </div>
+          
+          <p>
+            Protect your account with an additional layer of security by enabling two-factor authentication.
+            You'll need to enter a verification code from your Google Authenticator app when logging in.
+          </p>
+          
+          <div class="d-grid">
+            <a href="/auth/setup-2fa" class="btn btn-success">
+              <i class="bi bi-shield-plus"></i> Enable Two-Factor Authentication
+            </a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %> 

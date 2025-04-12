@@ -1,0 +1,208 @@
+<%- include('partials/header') %>
+
+<div class="row mb-4">
+  <div class="col-md-8">
+    <h1>Edit Playlist: <%= playlist.title %></h1>
+  </div>
+  <div class="col-md-4 text-end">
+    <a href="/playlists/<%= playlist.id %>" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Back to Playlist
+    </a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <form action="/playlists/<%= playlist.id %>/update" method="POST">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="<%= playlist.title %>" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3"><%= playlist.description %></textarea>
+      </div>
+      
+      <% if (playlist.id.startsWith('custom_')) { %>
+        <div class="mb-3">
+          <label for="videoIds" class="form-label">Video IDs (comma-separated)</label>
+          <input type="text" class="form-control" id="videoIds" name="videoIds" 
+                 value="<%= playlist.videos.map(video => video.id).join(',') %>">
+          <div class="form-text">Enter YouTube video IDs separated by commas</div>
+        </div>
+        
+        <div id="videoPreviewContainer" class="mb-3">
+          <label class="form-label">Videos in Playlist</label>
+          <div class="list-group video-list" id="videoList">
+            <% playlist.videos.forEach((video, index) => { %>
+              <div class="list-group-item d-flex align-items-center video-item" data-video-id="<%= video.id %>">
+                <div class="drag-handle me-2"><i class="bi bi-grip-vertical"></i></div>
+                <div class="flex-shrink-0">
+                  <img src="<%= video.thumbnail %>" alt="<%= video.title %>" width="120" class="rounded">
+                </div>
+                <div class="ms-3 flex-grow-1">
+                  <h6 class="mb-0"><%= video.title %></h6>
+                  <small class="text-muted"><%= video.duration %></small>
+                </div>
+                <div class="ms-auto">
+                  <button type="button" class="btn btn-sm btn-primary preview-video" data-video-id="<%= video.id %>">
+                    <i class="bi bi-play-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger remove-video" data-video-id="<%= video.id %>">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      <% } %>
+      
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="/playlists/<%= playlist.id %>" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Video Preview Modal -->
+<div class="modal fade" id="videoPreviewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Video Preview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe id="videoPreviewFrame" src="" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize variables
+    const videoList = document.getElementById('videoList');
+    const videoIdsInput = document.getElementById('videoIds');
+    
+    // Handle video preview
+    document.querySelectorAll('.preview-video').forEach(button => {
+      button.addEventListener('click', function() {
+        const videoId = this.getAttribute('data-video-id');
+        const iframe = document.getElementById('videoPreviewFrame');
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        
+        const modal = new bootstrap.Modal(document.getElementById('videoPreviewModal'));
+        modal.show();
+      });
+    });
+    
+    // Handle video removal
+    document.querySelectorAll('.remove-video').forEach(button => {
+      button.addEventListener('click', function() {
+        const videoId = this.getAttribute('data-video-id');
+        const videoItem = this.closest('.video-item');
+        
+        if (confirm('Are you sure you want to remove this video from the playlist?')) {
+          videoItem.remove();
+          updateVideoIds();
+        }
+      });
+    });
+    
+    // Make the video list sortable (if custom playlist)
+    if (videoList) {
+      // Initialize drag and drop functionality
+      let draggedItem = null;
+      
+      document.querySelectorAll('.video-item').forEach(item => {
+        const handle = item.querySelector('.drag-handle');
+        
+        handle.addEventListener('mousedown', function() {
+          draggedItem = item;
+          item.classList.add('dragging');
+        });
+        
+        item.addEventListener('mouseup', function() {
+          if (draggedItem) {
+            draggedItem.classList.remove('dragging');
+            draggedItem = null;
+            updateVideoIds();
+          }
+        });
+        
+        videoList.addEventListener('mousemove', function(e) {
+          if (!draggedItem) return;
+          
+          e.preventDefault();
+          
+          const afterElement = getDragAfterElement(videoList, e.clientY);
+          if (afterElement) {
+            videoList.insertBefore(draggedItem, afterElement);
+          } else {
+            videoList.appendChild(draggedItem);
+          }
+        });
+      });
+    }
+    
+    // Helper function to determine where to place the dragged item
+    function getDragAfterElement(container, y) {
+      const draggableElements = [...container.querySelectorAll('.video-item:not(.dragging)')];
+      
+      return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        
+        if (offset < 0 && offset > closest.offset) {
+          return { offset: offset, element: child };
+        } else {
+          return closest;
+        }
+      }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+    
+    // Update the hidden input with the current order of video IDs
+    function updateVideoIds() {
+      if (videoIdsInput && videoList) {
+        const videoIds = Array.from(videoList.querySelectorAll('.video-item'))
+          .map(item => item.getAttribute('data-video-id'))
+          .join(',');
+        
+        videoIdsInput.value = videoIds;
+      }
+    }
+  });
+</script>
+
+<style>
+  .video-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .video-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .video-item.dragging {
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .drag-handle {
+    cursor: grab;
+    color: #6c757d;
+  }
+  
+  .drag-handle:hover {
+    color: #495057;
+  }
+</style>
+
+<%- include('partials/footer') %> 

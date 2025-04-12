@@ -1,0 +1,104 @@
+<%- include('partials/header') %>
+
+<div class="row mb-4">
+  <div class="col">
+    <h1>Add New Playlist</h1>
+    <p class="lead">Enter a YouTube playlist ID or video ID to import a playlist</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <ul class="nav nav-tabs mb-3" id="importTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="playlist-tab" data-bs-toggle="tab" data-bs-target="#playlist-pane" type="button" role="tab">
+              Import by Playlist ID
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-pane" type="button" role="tab">
+              Import by Video ID
+            </button>
+          </li>
+        </ul>
+        
+        <div class="tab-content" id="importTabsContent">
+          <div class="tab-pane fade show active" id="playlist-pane" role="tabpanel" tabindex="0">
+            <form action="/playlists" method="POST">
+              <div class="mb-3">
+                <label for="playlistId" class="form-label">YouTube Playlist ID</label>
+                <input type="text" class="form-control" id="playlistId" name="playlistId" required 
+                       placeholder="e.g. PLillGF-RfqbYeckUaD1z6P2zxCIxLxAtX">
+                <div class="form-text">
+                  The playlist ID is the part after "list=" in a YouTube playlist URL.<br>
+                  Example: https://www.youtube.com/playlist?list=<strong>PLillGF-RfqbYeckUaD1z6P2zxCIxLxAtX</strong>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">API Method</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="method" id="googleapis" value="googleapis" checked>
+                  <label class="form-check-label" for="googleapis">
+                    Use Google APIs Library
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="method" id="axios" value="axios">
+                  <label class="form-check-label" for="axios">
+                    Use Axios Direct API Calls
+                  </label>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-cloud-download"></i> Import Playlist
+              </button>
+            </form>
+          </div>
+          
+          <div class="tab-pane fade" id="video-pane" role="tabpanel" tabindex="0">
+            <form action="/playlists" method="POST">
+              <div class="mb-3">
+                <label for="videoId" class="form-label">YouTube Video ID</label>
+                <input type="text" class="form-control" id="videoId" name="videoId" required 
+                       placeholder="e.g. dQw4w9WgXcQ">
+                <div class="form-text">
+                  The video ID is the part after "v=" in a YouTube video URL.<br>
+                  Example: https://www.youtube.com/watch?v=<strong>dQw4w9WgXcQ</strong>
+                </div>
+              </div>
+              
+              <div class="alert alert-info">
+                <i class="bi bi-info-circle"></i> This will find playlists that contain this video and import the first one.
+              </div>
+              
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-cloud-download"></i> Find and Import Playlist
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title">API Usage</h5>
+        <p>You can also use the API to programmatically add playlists:</p>
+        <pre class="bg-dark text-light p-3 rounded"><code>POST /api/playlists
+{
+  "playlistId": "PLillGF-RfqbYeckUaD1z6P2zxCIxLxAtX"
+}</code></pre>
+        <p>Or find playlists by video:</p>
+        <pre class="bg-dark text-light p-3 rounded"><code>GET /api/youtube?videoId=dQw4w9WgXcQ</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %> 

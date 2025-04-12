@@ -1,0 +1,391 @@
+<%- include('partials/header') %>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h1>"How to?" Playlists</h1>
+  </div>
+  <div class="col-md-6 text-end">
+    <% if (isAuthenticated) { %>
+      <button id="reorderBtn" class="btn btn-secondary me-2">
+        <i class="bi bi-arrow-down-up"></i> Reorder Playlists
+      </button>
+      <div class="dropdown d-inline-block">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="addPlaylistDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-plus-circle"></i> Add Playlist
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="addPlaylistDropdown">
+          <li><a class="dropdown-item" href="/playlists/add">Import from YouTube</a></li>
+          <li><a class="dropdown-item" href="/playlists/custom">Create Custom Playlist</a></li>
+        </ul>
+      </div>
+    <% } else { %>
+      <a href="/auth/login" class="btn btn-primary">
+        <i class="bi bi-shield-lock"></i> Admin Login
+      </a>
+    <% } %>
+  </div>
+</div>
+
+<% if (playlists.length === 0) { %>
+  <div class="alert alert-info">
+    <p>No playlists found. <% if (isAuthenticated) { %>You can <a href="/playlists/add">import a playlist from YouTube</a> or <a href="/playlists/custom">create your own custom playlist</a>.<% } else { %>Please log in as an administrator to add playlists.<% } %></p>
+  </div>
+<% } else { %>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="playlistContainer">
+    <% playlists.forEach(playlist => { %>
+      <div class="col playlist-item" data-playlist-id="<%= playlist.id %>">
+        <div class="card h-100">
+          <% if (isAuthenticated) { %>
+            <div class="drag-handle d-none text-center py-2 bg-secondary text-white">
+              <i class="bi bi-grip-horizontal"></i> Drag to reorder
+            </div>
+          <% } %>
+          <a href="/playlists/<%= playlist.id %>" class="thumbnail-link">
+            <img src="<%= playlist.thumbnail %>" class="card-img-top" alt="<%= playlist.title %>">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title"><%= playlist.title %></h5>
+            <p class="card-text text-muted">
+              <small><%= playlist.videos.length %> videos</small>
+              <% if (playlist.id.startsWith('custom_')) { %>
+                <span class="badge bg-primary ms-2">Custom</span>
+              <% } %>
+            </p>
+            <p class="card-text"><%= playlist.description.substring(0, 100) %><%= playlist.description.length > 100 ? '...' : '' %></p>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <a href="/playlists/<%= playlist.id %>" class="btn btn-sm btn-primary">
+              <i class="bi bi-eye"></i> View
+            </a>
+            <% if (isAuthenticated) { %>
+              <div>
+                <a href="/playlists/<%= playlist.id %>/edit" class="btn btn-sm btn-secondary">
+                  <i class="bi bi-pencil"></i> Edit
+                </a>
+                <form action="/playlists/<%= playlist.id %>?_method=DELETE" method="POST" class="d-inline delete-form">
+                  <button type="submit" class="btn btn-sm btn-danger">
+                    <i class="bi bi-trash"></i> Delete
+                  </button>
+                </form>
+              </div>
+            <% } %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Last updated: <%= playlist.lastUpdated %></small>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+<% } %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const reorderBtn = document.getElementById('reorderBtn');
+    const playlistContainer = document.getElementById('playlistContainer');
+    const dragHandles = document.querySelectorAll('.drag-handle');
+    let isReorderMode = false;
+    let draggedItem = null;
+    let initialY = 0;
+    let initialMouseY = 0;
+
+    // Toggle reorder mode
+    reorderBtn.addEventListener('click', function() {
+      isReorderMode = !isReorderMode;
+      
+      if (isReorderMode) {
+        reorderBtn.classList.remove('btn-secondary');
+        reorderBtn.classList.add('btn-success');
+        reorderBtn.innerHTML = '<i class="bi bi-check-lg"></i> Save Order';
+        
+        // Show drag handles
+        dragHandles.forEach(handle => {
+          handle.classList.remove('d-none');
+        });
+        
+        // Add draggable class to all playlist items
+        document.querySelectorAll('.playlist-item').forEach(item => {
+          item.classList.add('draggable');
+        });
+      } else {
+        reorderBtn.classList.remove('btn-success');
+        reorderBtn.classList.add('btn-secondary');
+        reorderBtn.innerHTML = '<i class="bi bi-arrow-down-up"></i> Reorder Playlists';
+        
+        // Hide drag handles
+        dragHandles.forEach(handle => {
+          handle.classList.add('d-none');
+        });
+        
+        // Remove draggable class from all playlist items
+        document.querySelectorAll('.playlist-item').forEach(item => {
+          item.classList.remove('draggable');
+        });
+        
+        // Save the new order
+        savePlaylistOrder();
+      }
+    });
+
+    // Set up drag and drop functionality
+    if (playlistContainer) {
+      // Mouse down event on drag handles
+      document.querySelectorAll('.drag-handle').forEach(handle => {
+        handle.addEventListener('mousedown', startDrag);
+        handle.addEventListener('touchstart', function(e) {
+          // Convert touch event to similar format as mouse event
+          const touch = e.touches[0];
+          const mouseEvent = {
+            clientX: touch.clientX,
+            clientY: touch.clientY,
+            preventDefault: function() {
+              e.preventDefault();
+            }
+          };
+          startDrag(mouseEvent);
+        }, { passive: false });
+        
+        function startDrag(e) {
+          if (!isReorderMode) return;
+          
+          // Get the playlist item (parent of the handle)
+          draggedItem = handle.closest('.playlist-item');
+          
+          // Store initial positions
+          const rect = draggedItem.getBoundingClientRect();
+          initialY = rect.top;
+          initialMouseY = e.clientY;
+          
+          // Add dragging class
+          draggedItem.classList.add('dragging');
+          
+          // Create a placeholder with the same dimensions
+          const placeholder = document.createElement('div');
+          placeholder.className = 'col playlist-item placeholder';
+          placeholder.style.height = rect.height + 'px';
+          placeholder.style.opacity = '0.3';
+          placeholder.style.border = '2px dashed #666';
+          placeholder.style.borderRadius = '5px';
+          
+          // Insert placeholder where the dragged item was
+          draggedItem.parentNode.insertBefore(placeholder, draggedItem);
+          
+          // Make the dragged item absolute positioned
+          draggedItem.style.position = 'absolute';
+          draggedItem.style.zIndex = '1000';
+          draggedItem.style.width = rect.width + 'px';
+          draggedItem.style.left = rect.left + 'px';
+          draggedItem.style.top = rect.top + 'px';
+          
+          // Prevent default to avoid text selection during drag
+          e.preventDefault();
+        }
+      });
+      
+      // Mouse move event on document
+      document.addEventListener('mousemove', moveItem);
+      document.addEventListener('touchmove', function(e) {
+        // Convert touch event to similar format as mouse event
+        const touch = e.touches[0];
+        const mouseEvent = {
+          clientX: touch.clientX,
+          clientY: touch.clientY,
+          preventDefault: function() {
+            e.preventDefault();
+          }
+        };
+        moveItem(mouseEvent);
+      }, { passive: false });
+      
+      function moveItem(e) {
+        if (!draggedItem || !isReorderMode) return;
+        
+        // Move the dragged item
+        const deltaY = e.clientY - initialMouseY;
+        draggedItem.style.top = (initialY + deltaY) + 'px';
+        
+        // Find the element we're hovering over
+        const elementsBelow = document.elementsFromPoint(e.clientX, e.clientY);
+        const placeholder = document.querySelector('.placeholder');
+        
+        // Find the playlist item we're hovering over (excluding the dragged item and placeholder)
+        const hoverItem = elementsBelow.find(el => 
+          el !== draggedItem && 
+          el !== placeholder &&
+          el.classList.contains('playlist-item')
+        );
+        
+        if (hoverItem) {
+          const hoverRect = hoverItem.getBoundingClientRect();
+          const hoverMiddle = hoverRect.top + hoverRect.height / 2;
+          
+          // Determine if we should place before or after the hovered item
+          if (e.clientY < hoverMiddle) {
+            playlistContainer.insertBefore(placeholder, hoverItem);
+          } else {
+            playlistContainer.insertBefore(placeholder, hoverItem.nextSibling);
+          }
+        }
+        
+        e.preventDefault();
+      }
+      
+      // Mouse up event on document
+      document.addEventListener('mouseup', endDrag);
+      document.addEventListener('touchend', endDrag);
+      
+      function endDrag() {
+        if (!draggedItem || !isReorderMode) return;
+        
+        // Get the placeholder
+        const placeholder = document.querySelector('.placeholder');
+        
+        // Move the dragged item to the placeholder position
+        if (placeholder) {
+          playlistContainer.insertBefore(draggedItem, placeholder);
+          placeholder.remove();
+        }
+        
+        // Reset the dragged item's style
+        draggedItem.style.position = '';
+        draggedItem.style.zIndex = '';
+        draggedItem.style.width = '';
+        draggedItem.style.left = '';
+        draggedItem.style.top = '';
+        
+        // Remove dragging class
+        draggedItem.classList.remove('dragging');
+        
+        // Reset dragged item
+        draggedItem = null;
+      }
+    }
+    
+    // Save the playlist order to the server
+    function savePlaylistOrder() {
+      const playlistItems = document.querySelectorAll('.playlist-item');
+      const playlistIds = Array.from(playlistItems).map(item => item.getAttribute('data-playlist-id'));
+      
+      // Save to localStorage as a fallback
+      localStorage.setItem('playlistOrder', JSON.stringify(playlistIds));
+      
+      // Save to the server
+      fetch('/api/playlists/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ playlistIds }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Show a success message
+          const alertDiv = document.createElement('div');
+          alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
+          alertDiv.innerHTML = `
+            <strong>Success!</strong> Playlist order saved to server.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          `;
+          
+          document.querySelector('main.container').prepend(alertDiv);
+          
+          // Auto-dismiss after 3 seconds
+          setTimeout(() => {
+            const bsAlert = new bootstrap.Alert(alertDiv);
+            bsAlert.close();
+          }, 3000);
+        } else {
+          // Show an error message
+          const alertDiv = document.createElement('div');
+          alertDiv.className = 'alert alert-danger alert-dismissible fade show mt-3';
+          alertDiv.innerHTML = `
+            <strong>Error!</strong> ${data.error || 'Failed to save playlist order to server.'}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          `;
+          
+          document.querySelector('main.container').prepend(alertDiv);
+        }
+      })
+      .catch(error => {
+        console.error('Error saving playlist order:', error);
+        
+        // Show an error message
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-danger alert-dismissible fade show mt-3';
+        alertDiv.innerHTML = `
+          <strong>Error!</strong> Failed to save playlist order to server.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        
+        document.querySelector('main.container').prepend(alertDiv);
+      });
+    }
+    
+    // Apply saved order on page load
+    function applySavedOrder() {
+      const savedOrder = localStorage.getItem('playlistOrder');
+      
+      if (savedOrder && playlistContainer) {
+        const orderArray = JSON.parse(savedOrder);
+        const playlistItems = document.querySelectorAll('.playlist-item');
+        const itemsArray = Array.from(playlistItems);
+        
+        // Sort the items according to the saved order
+        orderArray.forEach(playlistId => {
+          const item = itemsArray.find(el => el.getAttribute('data-playlist-id') === playlistId);
+          if (item) {
+            playlistContainer.appendChild(item);
+          }
+        });
+      }
+    }
+    
+    // Apply saved order when the page loads
+    applySavedOrder();
+  });
+</script>
+
+<style>
+  .playlist-item {
+    transition: transform 0.2s;
+  }
+  
+  .playlist-item.draggable {
+    cursor: move;
+  }
+  
+  .playlist-item.dragging {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  
+  .drag-handle {
+    cursor: grab;
+    user-select: none;
+  }
+  
+  .drag-handle:hover {
+    background-color: #495057 !important;
+  }
+  
+  .placeholder {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .thumbnail-link {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .thumbnail-link img {
+    transition: transform 0.3s ease;
+  }
+  
+  .thumbnail-link:hover img {
+    transform: scale(1.05);
+  }
+</style>
+
+<%- include('partials/footer') %> 

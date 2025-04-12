@@ -1,0 +1,147 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+        </ol>
+      </nav>
+      <h1 class="display-4 mb-4">About "How to?" Playlists</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">About the Application</h2>
+          <p class="lead">
+            "How to?" Playlists is a curated collection of educational YouTube playlists designed to help you learn new skills and knowledge.
+          </p>
+          <p>
+            This application allows you to:
+          </p>
+          <ul>
+            <li>Browse and search through educational playlists</li>
+            <li>Watch videos directly within the application</li>
+            <li>Create custom playlists with your favorite educational videos</li>
+            <li>Organize and manage your learning resources in one place</li>
+          </ul>
+          <p>
+            Whether you're learning programming, cooking, DIY projects, or any other skill, "How to?" Playlists helps you organize and access the best educational content from YouTube.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">About the Developer</h2>
+          <div class="row">
+            <div class="col-md-4 text-center mb-3">
+              <img src="https://vinod.co/assets/images/vinod-profile.jpg" alt="Vinod Kumar Kayartaya" class="img-fluid rounded-circle mb-3" style="max-width: 200px;" onerror="this.src='https://via.placeholder.com/200?text=Vinod+Kumar+K'">
+              <h4>Vinod Kumar Kayartaya</h4>
+              <p class="text-muted">Software Developer & Trainer</p>
+            </div>
+            <div class="col-md-8">
+              <p>
+                Vinod Kumar Kayartaya is an experienced software developer, trainer, and educator based in Bangalore, India. With over two decades of experience in the software industry, Vinod specializes in Java, JavaScript, and web development technologies.
+              </p>
+              <p>
+                As a passionate educator, Vinod has trained thousands of students and professionals in various programming languages and frameworks. His teaching approach focuses on practical, hands-on learning that prepares students for real-world software development challenges.
+              </p>
+              <p>
+                Vinod is known for his clear explanations, comprehensive course materials, and ability to break down complex concepts into understandable components. His educational content on platforms like YouTube has helped countless learners worldwide.
+              </p>
+              <div class="mt-3">
+                <h5>Areas of Expertise:</h5>
+                <span class="badge bg-primary me-1">Java</span>
+                <span class="badge bg-primary me-1">JavaScript</span>
+                <span class="badge bg-primary me-1">Node.js</span>
+                <span class="badge bg-primary me-1">Spring Framework</span>
+                <span class="badge bg-primary me-1">Web Development</span>
+                <span class="badge bg-primary me-1">Database Design</span>
+                <span class="badge bg-primary me-1">Software Architecture</span>
+              </div>
+              <div class="mt-3">
+                <a href="https://vinod.co" target="_blank" class="btn btn-outline-primary me-2">
+                  <i class="bi bi-globe"></i> Website
+                </a>
+                <a href="https://github.com/vinod-kayartaya" target="_blank" class="btn btn-outline-dark me-2">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/vinodkayartaya/" target="_blank" class="btn btn-outline-primary">
+                  <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+          <h3 class="card-title h5 mb-0">Contact Information</h3>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="bi bi-envelope me-2"></i>
+              <a href="mailto:vinod@vinod.co">vinod@vinod.co</a>
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-globe me-2"></i>
+              <a href="https://vinod.co" target="_blank">vinod.co</a>
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-geo-alt me-2"></i>
+              Bangalore, India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <h3 class="card-title h5 mb-0">Educational Resources</h3>
+        </div>
+        <div class="card-body">
+          <p>Vinod shares his knowledge through various platforms:</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="bi bi-youtube me-2 text-danger"></i>
+              <a href="https://www.youtube.com/c/VinodKayartaya" target="_blank">YouTube Channel</a>
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-book me-2"></i>
+              <a href="https://vinod.co/training" target="_blank">Training Programs</a>
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-file-earmark-text me-2"></i>
+              <a href="https://vinod.co/blog" target="_blank">Technical Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="mb-0">
+            <i class="bi bi-code-slash me-2"></i>
+            "How to?" Playlists Manager &copy; <%= new Date().getFullYear() %> | Developed by Vinod Kumar Kayartaya
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %> 

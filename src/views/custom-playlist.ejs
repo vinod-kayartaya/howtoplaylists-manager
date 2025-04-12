@@ -1,0 +1,275 @@
+<%- include('partials/header') %>
+
+<div class="row mb-4">
+  <div class="col">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create Custom Playlist</li>
+      </ol>
+    </nav>
+    <h1>Create Your Custom Playlist</h1>
+    <p class="lead">Build your own playlist by adding YouTube videos</p>
+  </div>
+</div>
+
+<% if (errors && errors.length > 0) { %>
+  <div class="alert alert-danger">
+    <h4 class="alert-heading">Please fix the following errors:</h4>
+    <ul class="mb-0">
+      <% errors.forEach(error => { %>
+        <li><%= error %></li>
+      <% }); %>
+    </ul>
+  </div>
+<% } %>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0">Playlist Details</h5>
+      </div>
+      <div class="card-body">
+        <form id="customPlaylistForm" action="/playlists/custom" method="POST">
+          <div class="mb-3">
+            <label for="title" class="form-label">Playlist Title *</label>
+            <input type="text" class="form-control" id="title" name="title" required
+                   value="<%= formData && formData.title ? formData.title : '' %>">
+          </div>
+          
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3"><%= formData && formData.description ? formData.description : '' %></textarea>
+          </div>
+          
+          <div class="mb-3">
+            <label class="form-label">Videos *</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="videoIdInput" placeholder="Enter YouTube video ID">
+              <button class="btn btn-primary" type="button" id="addVideoBtn">
+                <i class="bi bi-plus-circle"></i> Add Video
+              </button>
+            </div>
+            <div class="form-text mb-2">
+              The video ID is the part after "v=" in a YouTube video URL.<br>
+              Example: https://www.youtube.com/watch?v=<strong>dQw4w9WgXcQ</strong>
+            </div>
+            
+            <div class="alert alert-info" id="emptyVideosMessage">
+              <i class="bi bi-info-circle"></i> No videos added yet. Add videos using the form above.
+            </div>
+            
+            <div id="videoPreviewContainer" class="list-group mb-3">
+              <!-- Video previews will be added here dynamically -->
+            </div>
+            
+            <!-- Hidden input to store video IDs -->
+            <input type="hidden" id="videoIds" name="videoIds" value="<%= formData && formData.videoIds ? formData.videoIds : '' %>">
+          </div>
+          
+          <div class="d-flex justify-content-between">
+            <a href="/" class="btn btn-outline-secondary">
+              <i class="bi bi-x-circle"></i> Cancel
+            </a>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-save"></i> Create Playlist
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title">Tips for Creating Custom Playlists</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent">Add videos by entering their YouTube IDs</li>
+          <li class="list-group-item bg-transparent">Drag and drop videos to reorder them</li>
+          <li class="list-group-item bg-transparent">Click the trash icon to remove a video</li>
+          <li class="list-group-item bg-transparent">The first video's thumbnail will be used as the playlist thumbnail</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="card mt-4">
+      <div class="card-header">
+        <h5 class="mb-0">Video Preview</h5>
+      </div>
+      <div class="card-body p-0">
+        <div class="ratio ratio-16x9">
+          <iframe id="previewPlayer" src="" title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const videoIdInput = document.getElementById('videoIdInput');
+    const addVideoBtn = document.getElementById('addVideoBtn');
+    const videoPreviewContainer = document.getElementById('videoPreviewContainer');
+    const videoIdsInput = document.getElementById('videoIds');
+    const emptyVideosMessage = document.getElementById('emptyVideosMessage');
+    const previewPlayer = document.getElementById('previewPlayer');
+    
+    // Initialize Sortable for drag-and-drop reordering
+    const sortable = new Sortable(videoPreviewContainer, {
+      animation: 150,
+      ghostClass: 'bg-light',
+      onEnd: updateVideoIds
+    });
+    
+    // Initialize from existing data if available
+    if (videoIdsInput.value && videoIdsInput.value.trim() !== '') {
+      const videoIds = videoIdsInput.value.split(',');
+      videoIds.forEach(id => fetchAndAddVideoPreview(id.trim()));
+    }
+    
+    // Add video button click handler
+    addVideoBtn.addEventListener('click', function() {
+      const videoId = extractVideoId(videoIdInput.value);
+      if (videoId) {
+        fetchAndAddVideoPreview(videoId);
+        videoIdInput.value = '';
+      } else {
+        alert('Please enter a valid YouTube video ID or URL');
+      }
+    });
+    
+    // Also allow pressing Enter to add a video
+    videoIdInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        addVideoBtn.click();
+      }
+    });
+    
+    // Extract video ID from various YouTube URL formats or direct ID
+    function extractVideoId(input) {
+      input = input.trim();
+      
+      // If it's already just an ID (typically 11 characters)
+      if (/^[a-zA-Z0-9_-]{11}$/.test(input)) {
+        return input;
+      }
+      
+      // Try to extract from URL
+      const regExp = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+      const match = input.match(regExp);
+      
+      return (match && match[1].length === 11) ? match[1] : null;
+    }
+    
+    // Fetch video details and add to preview
+    async function fetchAndAddVideoPreview(videoId) {
+      try {
+        // Show loading state
+        const tempItem = document.createElement('div');
+        tempItem.className = 'list-group-item';
+        tempItem.innerHTML = `
+          <div class="d-flex align-items-center">
+            <div class="spinner-border spinner-border-sm me-3" role="status"></div>
+            <span>Loading video information for ${videoId}...</span>
+          </div>
+        `;
+        videoPreviewContainer.appendChild(tempItem);
+        
+        // Fetch video details from YouTube API
+        const response = await fetch(`/api/youtube?videoId=${videoId}&details=true`);
+        const data = await response.json();
+        
+        // Remove loading item
+        videoPreviewContainer.removeChild(tempItem);
+        
+        if (!data.success) {
+          throw new Error(data.error || 'Video not found');
+        }
+        
+        // Create video preview item
+        const videoItem = document.createElement('div');
+        videoItem.className = 'list-group-item video-preview-item';
+        videoItem.dataset.videoId = videoId;
+        videoItem.innerHTML = `
+          <div class="d-flex align-items-center">
+            <div class="me-2 handle" style="cursor: grab;">
+              <i class="bi bi-grip-vertical"></i>
+            </div>
+            <div class="me-3" style="width: 120px; flex-shrink: 0;">
+              <img src="${data.data.thumbnail}" class="img-fluid rounded" alt="${data.data.title}">
+            </div>
+            <div class="flex-grow-1">
+              <h6 class="mb-0">${data.data.title}</h6>
+              <small class="text-muted">${data.data.duration}</small>
+            </div>
+            <div>
+              <button type="button" class="btn btn-sm btn-outline-primary preview-btn me-2" data-video-id="${videoId}">
+                <i class="bi bi-play-fill"></i>
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-danger remove-btn" data-video-id="${videoId}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </div>
+        `;
+        
+        // Add to container
+        videoPreviewContainer.appendChild(videoItem);
+        
+        // Add event listeners
+        videoItem.querySelector('.preview-btn').addEventListener('click', function() {
+          previewPlayer.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+        });
+        
+        videoItem.querySelector('.remove-btn').addEventListener('click', function() {
+          videoPreviewContainer.removeChild(videoItem);
+          updateVideoIds();
+        });
+        
+        // Update hidden input with video IDs
+        updateVideoIds();
+        
+        // If this is the first video, show it in the preview
+        if (videoPreviewContainer.children.length === 1) {
+          previewPlayer.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+        }
+      } catch (error) {
+        console.error('Error fetching video:', error);
+        alert(`Could not load video with ID: ${videoId}. Please check if the ID is correct.`);
+        
+        // Remove loading item if it still exists
+        const loadingItem = Array.from(videoPreviewContainer.children).find(
+          item => item.textContent.includes(`Loading video information for ${videoId}`)
+        );
+        if (loadingItem) {
+          videoPreviewContainer.removeChild(loadingItem);
+        }
+      }
+    }
+    
+    // Update the hidden input with the current order of video IDs
+    function updateVideoIds() {
+      const videoItems = videoPreviewContainer.querySelectorAll('.video-preview-item');
+      const videoIds = Array.from(videoItems).map(item => item.dataset.videoId);
+      
+      videoIdsInput.value = videoIds.join(',');
+      
+      // Show/hide empty message
+      emptyVideosMessage.style.display = videoIds.length > 0 ? 'none' : 'block';
+      
+      // Enable/disable form submission
+      document.querySelector('button[type="submit"]').disabled = videoIds.length === 0;
+    }
+    
+    // Initial update
+    updateVideoIds();
+  });
+</script>
+
+<%- include('partials/footer') %> 

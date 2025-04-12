@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Setup Two-Factor Authentication</h4>
+      </div>
+      <div class="card-body">
+        <% if (error && error.length > 0) { %>
+          <div class="alert alert-danger">
+            <%= error %>
+          </div>
+        <% } %>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Step 1: Scan QR Code</h5>
+            <p>
+              Scan this QR code with your Google Authenticator app.
+              If you can't scan the QR code, you can manually enter the secret key.
+            </p>
+            
+            <div class="text-center mb-4">
+              <img src="<%= qrCodeUrl %>" alt="QR Code" class="img-fluid border p-2">
+            </div>
+            
+            <div class="mb-4">
+              <label class="form-label">Secret Key (for manual entry)</label>
+              <div class="input-group">
+                <input type="text" class="form-control" value="<%= secret %>" readonly>
+                <button class="btn btn-outline-secondary" type="button" id="copyButton">
+                  <i class="bi bi-clipboard"></i>
+                </button>
+              </div>
+              <div class="form-text">
+                If you can't scan the QR code, you can manually enter this secret key into your authenticator app.
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <h5>Step 2: Verify Setup</h5>
+            <p>
+              Enter the verification code from your Google Authenticator app to confirm setup.
+            </p>
+            
+            <form action="/auth/setup-2fa" method="POST">
+              <div class="mb-3">
+                <label for="token" class="form-label">Authentication Code</label>
+                <input type="text" class="form-control" id="token" name="token" 
+                       placeholder="6-digit code" required autocomplete="off" inputmode="numeric" pattern="[0-9]*" maxlength="6">
+                <div class="form-text">Enter the 6-digit code from your authenticator app</div>
+              </div>
+              
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success">
+                  <i class="bi bi-shield-check"></i> Verify and Enable
+                </button>
+                <a href="/auth/settings" class="btn btn-secondary">
+                  <i class="bi bi-x-circle"></i> Cancel
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyButton = document.getElementById('copyButton');
+    const secretInput = copyButton.previousElementSibling;
+    
+    copyButton.addEventListener('click', function() {
+      secretInput.select();
+      document.execCommand('copy');
+      
+      // Change button text temporarily
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-check"></i>';
+      copyButton.classList.add('btn-success');
+      copyButton.classList.remove('btn-outline-secondary');
+      
+      setTimeout(function() {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-outline-secondary');
+      }, 2000);
+    });
+  });
+</script>
+
+<%- include('../partials/footer') %> 

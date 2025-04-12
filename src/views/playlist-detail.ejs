@@ -1,0 +1,246 @@
+<%- include('partials/header') %>
+
+<div class="row mb-4">
+  <div class="col-md-8">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= playlist.title %></li>
+      </ol>
+    </nav>
+    <h1><%= playlist.title %></h1>
+    <p class="lead"><%= playlist.description %></p>
+  </div>
+  <div class="col-md-4 text-end">
+    <% if (isAuthenticated) { %>
+      <div class="btn-group" role="group">
+        <a href="/playlists/<%= playlist.id %>/edit" class="btn btn-outline-secondary">
+          <i class="bi bi-pencil"></i> Edit
+        </a>
+        <form action="/playlists/<%= playlist.id %>?_method=DELETE" method="POST" class="d-inline delete-form">
+          <button type="submit" class="btn btn-outline-danger">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+        </form>
+        <a href="/api/playlists/<%= playlist.id %>?refresh=true" class="btn btn-outline-primary">
+          <i class="bi bi-arrow-clockwise"></i> Refresh
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="card">
+      <img src="<%= playlist.thumbnail %>" class="card-img-top" alt="<%= playlist.title %>">
+      <div class="card-body">
+        <h5 class="card-title">Playlist Info</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Videos:</strong> <%= playlist.videos.length %>
+          </li>
+          <li class="list-group-item">
+            <strong>YouTube ID:</strong> <%= playlist.id %>
+          </li>
+          <% if (playlist.tags && playlist.tags.length > 0) { %>
+            <li class="list-group-item">
+              <strong>Tags:</strong>
+              <div>
+                <% playlist.tags.forEach(tag => { %>
+                  <span class="badge bg-secondary me-1"><%= tag %></span>
+                <% }); %>
+              </div>
+            </li>
+          <% } %>
+          <li class="list-group-item">
+            <strong>Created:</strong> <%= playlist.created %>
+          </li>
+          <li class="list-group-item">
+            <strong>Last Updated:</strong> <%= playlist.lastUpdated %>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.youtube.com/playlist?list=<%= playlist.id %>" target="_blank" class="btn btn-danger w-100">
+          <i class="bi bi-youtube"></i> Watch on YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-8">
+    <!-- Video Player Section -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0" id="currentVideoTitle">Video Player</h5>
+      </div>
+      <div class="card-body p-0">
+        <div class="ratio ratio-16x9">
+          <iframe id="youtubePlayer" src="" title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <button class="btn btn-outline-secondary" id="prevVideo" disabled>
+          <i class="bi bi-skip-backward-fill"></i> Previous
+        </button>
+        <div>
+          <button class="btn btn-outline-primary" id="toggleAutoplay">
+            <i class="bi bi-play-circle"></i> Autoplay: <span id="autoplayStatus">Off</span>
+          </button>
+        </div>
+        <button class="btn btn-outline-secondary" id="nextVideo" disabled>
+          <i class="bi bi-skip-forward-fill"></i> Next
+        </button>
+      </div>
+    </div>
+
+    <!-- Videos List -->
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Videos</h5>
+        <div class="input-group" style="max-width: 300px;">
+          <input type="text" class="form-control" id="videoSearch" placeholder="Search videos...">
+          <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="list-group list-group-flush" id="videosList">
+        <% if (playlist.videos.length === 0) { %>
+          <div class="list-group-item">
+            <p class="text-muted">No videos found in this playlist.</p>
+          </div>
+        <% } else { %>
+          <% playlist.videos.forEach((video, index) => { %>
+            <a href="javascript:void(0);" data-video-id="<%= video.id %>" data-index="<%= index %>" 
+               class="list-group-item list-group-item-action video-item">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img src="<%= video.thumbnail %>" class="img-fluid rounded" alt="<%= video.title %>">
+                  <span class="badge bg-dark position-absolute" style="bottom: 5px; right: 5px;">
+                    <%= video.duration %>
+                  </span>
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= index + 1 %>. <%= video.title %></h5>
+                    <p class="card-text"><%= video.description.substring(0, 100) %><%= video.description.length > 100 ? '...' : '' %></p>
+                    <p class="card-text"><small class="text-muted">Uploaded: <%= video.uploadDate %></small></p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          <% }); %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Video player functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const videoItems = document.querySelectorAll('.video-item');
+    const player = document.getElementById('youtubePlayer');
+    const currentVideoTitle = document.getElementById('currentVideoTitle');
+    const prevButton = document.getElementById('prevVideo');
+    const nextButton = document.getElementById('nextVideo');
+    const toggleAutoplayButton = document.getElementById('toggleAutoplay');
+    const autoplayStatus = document.getElementById('autoplayStatus');
+    
+    let currentIndex = -1;
+    let autoplay = false;
+    const videos = [<% playlist.videos.forEach(video => { %>{ id: '<%= video.id %>', title: '<%= video.title.replace(/'/g, "\\'") %>' },<% }); %>];
+    
+    // Function to load a video by index
+    function loadVideo(index) {
+      if (index >= 0 && index < videos.length) {
+        currentIndex = index;
+        const videoId = videos[index].id;
+        player.src = `https://www.youtube.com/embed/${videoId}?rel=0${autoplay ? '&autoplay=1' : ''}`;
+        currentVideoTitle.textContent = videos[index].title;
+        
+        // Update active state in the list
+        videoItems.forEach(item => item.classList.remove('active', 'bg-light'));
+        videoItems[index].classList.add('active', 'bg-light');
+        
+        // Scroll the active video into view
+        videoItems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        
+        // Update button states
+        prevButton.disabled = index === 0;
+        nextButton.disabled = index === videos.length - 1;
+      }
+    }
+    
+    // Click event for video items
+    videoItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const index = parseInt(this.getAttribute('data-index'));
+        loadVideo(index);
+      });
+    });
+    
+    // Previous button
+    prevButton.addEventListener('click', function() {
+      if (currentIndex > 0) {
+        loadVideo(currentIndex - 1);
+      }
+    });
+    
+    // Next button
+    nextButton.addEventListener('click', function() {
+      if (currentIndex < videos.length - 1) {
+        loadVideo(currentIndex + 1);
+      }
+    });
+    
+    // Toggle autoplay
+    toggleAutoplayButton.addEventListener('click', function() {
+      autoplay = !autoplay;
+      autoplayStatus.textContent = autoplay ? 'On' : 'Off';
+      
+      // If a video is already playing, reload it with the new autoplay setting
+      if (currentIndex >= 0) {
+        loadVideo(currentIndex);
+      }
+    });
+    
+    // Load the first video if there are videos
+    if (videos.length > 0) {
+      loadVideo(0);
+    }
+    
+    // Simple client-side search functionality
+    const searchInput = document.getElementById('videoSearch');
+    const clearButton = document.getElementById('clearSearch');
+    
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      
+      videoItems.forEach(item => {
+        const title = item.querySelector('.card-title').textContent.toLowerCase();
+        const description = item.querySelector('.card-text').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+    
+    clearButton.addEventListener('click', function() {
+      searchInput.value = '';
+      videoItems.forEach(item => {
+        item.style.display = '';
+      });
+    });
+  });
+</script>
+
+<%- include('partials/footer') %> 
