@@ -1,0 +1,6 @@
+{
+  "username": "admin",
+  "password": "$2a$12$DHnL41w/Ucgmy4SSo3FjgergW3hhDm9Xvc9zQ1An0aXHUwGeD0k4e",
+  "twoFactorSecret": null,
+  "twoFactorEnabled": false
+}
