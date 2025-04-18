@@ -4566,6 +4566,512 @@
       "tags": [],
       "created": "2025-03-23",
       "lastUpdated": "2025-03-23"
+    },
+    {
+      "id": "PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu",
+      "title": "Data structures playlist",
+      "description": "Playlist of videos on data structures.",
+      "thumbnail": "https://i.ytimg.com/vi/Qmt0QwzEmh0/hqdefault.jpg",
+      "videos": [
+        {
+          "id": "Qmt0QwzEmh0",
+          "title": "Data structures introduction",
+          "description": "Data structures series link:\nhttps://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix\n\n================================\n\nGithub source code link:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=Qmt0QwzEmh0",
+          "thumbnail": "https://i.ytimg.com/vi/Qmt0QwzEmh0/hqdefault.jpg",
+          "duration": "2:24",
+          "uploadDate": "2017-06-13"
+        },
+        {
+          "id": "2USMAwcRWHE",
+          "title": "Abstract data types",
+          "description": "An Introduction to Abstract Data Types ADT\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com \n\n===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=2USMAwcRWHE",
+          "thumbnail": "https://i.ytimg.com/vi/2USMAwcRWHE/hqdefault.jpg",
+          "duration": "4:48",
+          "uploadDate": "2017-08-26"
+        },
+        {
+          "id": "zUUkiEllHG0",
+          "title": "Introduction to Big-O",
+          "description": "A short introduction to Big-O notation.\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms",
+          "url": "https://www.youtube.com/watch?v=zUUkiEllHG0",
+          "thumbnail": "https://i.ytimg.com/vi/zUUkiEllHG0/hqdefault.jpg",
+          "duration": "12:40",
+          "uploadDate": "2017-01-06"
+        },
+        {
+          "id": "PEnFFiQe1pM",
+          "title": "Dynamic and Static Arrays",
+          "description": "Related videos:\nstatic/dynamic arrays: https://youtu.be/PEnFFiQe1pM\nstatic/dynamic arrays code: https://youtu.be/tvw4v7FEF1w\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=PEnFFiQe1pM",
+          "thumbnail": "https://i.ytimg.com/vi/PEnFFiQe1pM/hqdefault.jpg",
+          "duration": "11:52",
+          "uploadDate": "2017-01-10"
+        },
+        {
+          "id": "tvw4v7FEF1w",
+          "title": "Dynamic Array Code",
+          "description": "Related videos:\nstatic/dynamic arrays: https://youtu.be/PEnFFiQe1pM\nstatic/dynamic arrays code: https://youtu.be/tvw4v7FEF1w\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=tvw4v7FEF1w",
+          "thumbnail": "https://i.ytimg.com/vi/tvw4v7FEF1w/hqdefault.jpg",
+          "duration": "6:46",
+          "uploadDate": "2017-01-10"
+        },
+        {
+          "id": "-Yn5DU0_-lw",
+          "title": "Linked Lists Introduction",
+          "description": "Related videos:\nLinked list intro: https://youtu.be/-Yn5DU0_-lw\nLinked list code: https://youtu.be/m-8ZBO2ywaU\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=-Yn5DU0_-lw",
+          "thumbnail": "https://i.ytimg.com/vi/-Yn5DU0_-lw/hqdefault.jpg",
+          "duration": "14:43",
+          "uploadDate": "2017-01-13"
+        },
+        {
+          "id": "m-8ZBO2ywaU",
+          "title": "Doubly Linked List Code",
+          "description": "Related videos:\nLinked list intro: https://youtu.be/-Yn5DU0_-lw\nLinked list code: https://youtu.be/m-8ZBO2ywaU\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=m-8ZBO2ywaU",
+          "thumbnail": "https://i.ytimg.com/vi/m-8ZBO2ywaU/hqdefault.jpg",
+          "duration": "9:36",
+          "uploadDate": "2017-01-14"
+        },
+        {
+          "id": "L3ud3rXpIxA",
+          "title": "Stack Introduction",
+          "description": "Related videos:\nStack intro: https://youtu.be/L3ud3rXpIxA\nStack implementation: https://youtu.be/RAMqDLI6_1c\n\nData Structures Source Code:\nhttps://github.com/williamfiset/data-structures\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=L3ud3rXpIxA",
+          "thumbnail": "https://i.ytimg.com/vi/L3ud3rXpIxA/hqdefault.jpg",
+          "duration": "11:39",
+          "uploadDate": "2017-01-18"
+        },
+        {
+          "id": "RAMqDLI6_1c",
+          "title": "Stack Implementation",
+          "description": "Related videos:\nStack intro: https://youtu.be/L3ud3rXpIxA\nStack implementation: https://youtu.be/RAMqDLI6_1c\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=RAMqDLI6_1c",
+          "thumbnail": "https://i.ytimg.com/vi/RAMqDLI6_1c/hqdefault.jpg",
+          "duration": "3:32",
+          "uploadDate": "2017-01-18"
+        },
+        {
+          "id": "oiZssCfk4_U",
+          "title": "Stack Code",
+          "description": "Stack code Github repository:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=oiZssCfk4_U",
+          "thumbnail": "https://i.ytimg.com/vi/oiZssCfk4_U/hqdefault.jpg",
+          "duration": "3:32",
+          "uploadDate": "2017-01-18"
+        },
+        {
+          "id": "KxzhEQ-zpDc",
+          "title": "Queue Introduction",
+          "description": "Related videos:\nQueue intro: https://youtu.be/KxzhEQ-zpDc\nQueue implementation: https://youtu.be/EoisnPvUkOA\nQueue code: https://youtu.be/HV-hpvuGaC4\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=KxzhEQ-zpDc",
+          "thumbnail": "https://i.ytimg.com/vi/KxzhEQ-zpDc/hqdefault.jpg",
+          "duration": "6:26",
+          "uploadDate": "2017-01-28"
+        },
+        {
+          "id": "EoisnPvUkOA",
+          "title": "Queue Implementation",
+          "description": "Related videos:\nQueue intro: https://youtu.be/KxzhEQ-zpDc\nQueue implementation: https://youtu.be/EoisnPvUkOA\nQueue code: https://youtu.be/HV-hpvuGaC4\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=EoisnPvUkOA",
+          "thumbnail": "https://i.ytimg.com/vi/EoisnPvUkOA/hqdefault.jpg",
+          "duration": "5:50",
+          "uploadDate": "2017-01-28"
+        },
+        {
+          "id": "HV-hpvuGaC4",
+          "title": "Queue Code",
+          "description": "Related videos:\nQueue intro: https://youtu.be/KxzhEQ-zpDc\nQueue implementation: https://youtu.be/EoisnPvUkOA\nQueue code: https://youtu.be/HV-hpvuGaC4\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com",
+          "url": "https://www.youtube.com/watch?v=HV-hpvuGaC4",
+          "thumbnail": "https://i.ytimg.com/vi/HV-hpvuGaC4/hqdefault.jpg",
+          "duration": "4:13",
+          "uploadDate": "2017-01-28"
+        },
+        {
+          "id": "wptevk0bshY",
+          "title": "Priority Queue Introduction",
+          "description": "Introduction to the priority queue data structure\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix\n\n======================================\n\nRelated Videos:\nPriority queue intro: https://www.youtube.com/watch?v=wptevk0bshY\nPriority queue min/max heaps: https://www.youtube.com/watch?v=HCEr35qpawQ\nPriority queue insertion: https://www.youtube.com/watch?v=QOJ-CmQiXko\nPriority queue removals: https://www.youtube.com/watch?v=eVq8CmoC1x8\nPriority queue code: https://www.youtube.com/watch?v=GLIRnUhknP0\n\nData structures source code repository:\nhttps://github.com/williamfiset/algorithms ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=wptevk0bshY",
+          "thumbnail": "https://i.ytimg.com/vi/wptevk0bshY/hqdefault.jpg",
+          "duration": "13:18",
+          "uploadDate": "2017-02-02"
+        },
+        {
+          "id": "HCEr35qpawQ",
+          "title": "Priority Queue Min Heaps and Max Heaps",
+          "description": "Related Videos:\nPriority queue intro: https://www.youtube.com/watch?v=wptevk0bshY\nPriority queue min/max heaps: https://www.youtube.com/watch?v=HCEr35qpawQ\nPriority queue insertion: https://www.youtube.com/watch?v=QOJ-CmQiXko\nPriority queue removals: https://www.youtube.com/watch?v=eVq8CmoC1x8\nPriority queue code: https://www.youtube.com/watch?v=GLIRnUhknP0\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=HCEr35qpawQ",
+          "thumbnail": "https://i.ytimg.com/vi/HCEr35qpawQ/hqdefault.jpg",
+          "duration": "6:15",
+          "uploadDate": "2017-02-02"
+        },
+        {
+          "id": "QOJ-CmQiXko",
+          "title": "Priority Queue Inserting Elements",
+          "description": "Related Videos:\nPriority queue intro: https://www.youtube.com/watch?v=wptevk0bshY\nPriority queue min/max heaps: https://www.youtube.com/watch?v=HCEr35qpawQ\nPriority queue insertion: https://www.youtube.com/watch?v=QOJ-CmQiXko\nPriority queue removals: https://www.youtube.com/watch?v=eVq8CmoC1x8\nPriority queue code: https://www.youtube.com/watch?v=GLIRnUhknP0\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nI'm looking for volunteers to review early access versions of my video content pre-recording. If this is something that may interest you please join the following mailing list for further updates:\n\nhttps://groups.google.com/forum/#!forum/williamfiset-youtube/join\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=QOJ-CmQiXko",
+          "thumbnail": "https://i.ytimg.com/vi/QOJ-CmQiXko/hqdefault.jpg",
+          "duration": "9:59",
+          "uploadDate": "2017-02-02"
+        },
+        {
+          "id": "eVq8CmoC1x8",
+          "title": "Priority Queue Removing Elements",
+          "description": "Related Videos:\nPriority queue intro: https://www.youtube.com/watch?v=wptevk0bshY\nPriority queue min/max heaps: https://www.youtube.com/watch?v=HCEr35qpawQ\nPriority queue insertion: https://www.youtube.com/watch?v=QOJ-CmQiXko\nPriority queue removals: https://www.youtube.com/watch?v=eVq8CmoC1x8\nPriority queue code: https://www.youtube.com/watch?v=GLIRnUhknP0\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=eVq8CmoC1x8",
+          "thumbnail": "https://i.ytimg.com/vi/eVq8CmoC1x8/hqdefault.jpg",
+          "duration": "14:07",
+          "uploadDate": "2017-02-10"
+        },
+        {
+          "id": "GLIRnUhknP0",
+          "title": "Priority Queue Code",
+          "description": "Related Videos:\nPriority queue intro: https://www.youtube.com/watch?v=wptevk0bshY\nPriority queue min/max heaps: https://www.youtube.com/watch?v=HCEr35qpawQ\nPriority queue insertion: https://www.youtube.com/watch?v=QOJ-CmQiXko\nPriority queue removals: https://www.youtube.com/watch?v=eVq8CmoC1x8\nPriority queue code: https://www.youtube.com/watch?v=GLIRnUhknP0\n\nCode repository:\nhttps://github.com/williamfiset/algorithms\n\nSource code:\nhttps://github.com/williamfiset/Algorithms/tree/master/src/main/java/com/williamfiset/algorithms/datastructures/priorityqueue\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=GLIRnUhknP0",
+          "thumbnail": "https://i.ytimg.com/vi/GLIRnUhknP0/hqdefault.jpg",
+          "duration": "15:50",
+          "uploadDate": "2017-04-07"
+        },
+        {
+          "id": "ibjEGG7ylHk",
+          "title": "Union Find Introduction",
+          "description": "Introduction to the Disjoint Set (Union find) data structure\n\nRelated Videos:\nUnion find intro: https://www.youtube.com/watch?v=ibjEGG7ylHk\nUnion find kruskal's algorithm: https://www.youtube.com/watch?v=JZBQLXgSGfs\nUnion find union and find: https://www.youtube.com/watch?v=0jNmHPfA_yE\nUnion find path compression: https://www.youtube.com/watch?v=VHRhJWacxis\nUnion find code: https://www.youtube.com/watch?v=KbFlZYCpONw\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\n====================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=ibjEGG7ylHk",
+          "thumbnail": "https://i.ytimg.com/vi/ibjEGG7ylHk/hqdefault.jpg",
+          "duration": "5:46",
+          "uploadDate": "2017-04-08"
+        },
+        {
+          "id": "JZBQLXgSGfs",
+          "title": "Union Find Kruskal's Algorithm",
+          "description": "Introduction to Kruskal's Algorithm\n\nRelated Videos:\nUnion find intro: https://www.youtube.com/watch?v=ibjEGG7ylHk\nUnion find kruskal's algorithm: https://www.youtube.com/watch?v=JZBQLXgSGfs\nUnion find union and find: https://www.youtube.com/watch?v=0jNmHPfA_yE\nUnion find path compression: https://www.youtube.com/watch?v=VHRhJWacxis\nUnion find code: https://www.youtube.com/watch?v=KbFlZYCpONw\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\n====================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=JZBQLXgSGfs",
+          "thumbnail": "https://i.ytimg.com/vi/JZBQLXgSGfs/hqdefault.jpg",
+          "duration": "6:15",
+          "uploadDate": "2017-04-08"
+        },
+        {
+          "id": "0jNmHPfA_yE",
+          "title": "Union Find - Union and Find Operations",
+          "description": "Learn about the Disjoint Set (Union Find) union and find operations.\n\nRelated Videos:\nUnion find intro: https://www.youtube.com/watch?v=ibjEGG7ylHk\nUnion find kruskal's algorithm: https://www.youtube.com/watch?v=JZBQLXgSGfs\nUnion find union and find: https://www.youtube.com/watch?v=0jNmHPfA_yE\nUnion find path compression: https://www.youtube.com/watch?v=VHRhJWacxis\nUnion find code: https://www.youtube.com/watch?v=KbFlZYCpONw\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\n====================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=0jNmHPfA_yE",
+          "thumbnail": "https://i.ytimg.com/vi/0jNmHPfA_yE/hqdefault.jpg",
+          "duration": "10:53",
+          "uploadDate": "2017-04-08"
+        },
+        {
+          "id": "VHRhJWacxis",
+          "title": "Union Find Path Compression",
+          "description": "Related Videos:\nUnion find intro: https://www.youtube.com/watch?v=ibjEGG7ylHk\nUnion find kruskal's algorithm: https://www.youtube.com/watch?v=JZBQLXgSGfs\nUnion find union and find: https://www.youtube.com/watch?v=0jNmHPfA_yE\nUnion find path compression: https://www.youtube.com/watch?v=VHRhJWacxis\nUnion find code: https://www.youtube.com/watch?v=KbFlZYCpONw\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=VHRhJWacxis",
+          "thumbnail": "https://i.ytimg.com/vi/VHRhJWacxis/hqdefault.jpg",
+          "duration": "6:36",
+          "uploadDate": "2017-04-08"
+        },
+        {
+          "id": "KbFlZYCpONw",
+          "title": "Union Find Code",
+          "description": "Related Videos:\nUnion find intro: https://www.youtube.com/watch?v=ibjEGG7ylHk\nUnion find kruskal's algorithm: https://www.youtube.com/watch?v=JZBQLXgSGfs\nUnion find union and find: https://www.youtube.com/watch?v=0jNmHPfA_yE\nUnion find path compression: https://www.youtube.com/watch?v=VHRhJWacxis\nUnion find code: https://www.youtube.com/watch?v=KbFlZYCpONw\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=KbFlZYCpONw",
+          "thumbnail": "https://i.ytimg.com/vi/KbFlZYCpONw/hqdefault.jpg",
+          "duration": "7:41",
+          "uploadDate": "2017-04-08"
+        },
+        {
+          "id": "JfSdGQdAzq8",
+          "title": "Binary Search Tree Introduction",
+          "description": "Related Videos:\nBinary search tree intro: https://youtu.be/JfSdGQdAzq8\nBinary search tree insertions: https://youtu.be/LwpLXm3eb6A\nBinary search tree removals: https://youtu.be/8K7EO7s_iFE\nBinary search tree traversals: https://youtu.be/k7GkEbECZK0\nBinary search tree code: https://youtu.be/QwrZcySUxK8\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=JfSdGQdAzq8",
+          "thumbnail": "https://i.ytimg.com/vi/JfSdGQdAzq8/hqdefault.jpg",
+          "duration": "12:31",
+          "uploadDate": "2017-04-23"
+        },
+        {
+          "id": "LwpLXm3eb6A",
+          "title": "Binary Search Tree Insertion",
+          "description": "Related Videos:\nBinary search tree intro: https://youtu.be/JfSdGQdAzq8\nBinary search tree insertions: https://youtu.be/LwpLXm3eb6A\nBinary search tree removals: https://youtu.be/8K7EO7s_iFE\nBinary search tree traversals: https://youtu.be/k7GkEbECZK0\nBinary search tree code: https://youtu.be/QwrZcySUxK8\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=LwpLXm3eb6A",
+          "thumbnail": "https://i.ytimg.com/vi/LwpLXm3eb6A/hqdefault.jpg",
+          "duration": "5:53",
+          "uploadDate": "2017-04-23"
+        },
+        {
+          "id": "8K7EO7s_iFE",
+          "title": "Binary Search Tree Removal",
+          "description": "Related Videos:\nBinary search tree intro: https://youtu.be/JfSdGQdAzq8\nBinary search tree insertions: https://youtu.be/LwpLXm3eb6A\nBinary search tree removals: https://youtu.be/8K7EO7s_iFE\nBinary search tree traversals: https://youtu.be/k7GkEbECZK0\nBinary search tree code: https://youtu.be/QwrZcySUxK8\n\nData Structures Source Code:\nhttps://github.com/williamfiset/data-structures\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=8K7EO7s_iFE",
+          "thumbnail": "https://i.ytimg.com/vi/8K7EO7s_iFE/hqdefault.jpg",
+          "duration": "14:10",
+          "uploadDate": "2017-04-23"
+        },
+        {
+          "id": "k7GkEbECZK0",
+          "title": "Binary Search Tree Traversals",
+          "description": "Related Videos:\nBinary search tree intro: https://youtu.be/JfSdGQdAzq8\nBinary search tree insertions: https://youtu.be/LwpLXm3eb6A\nBinary search tree removals: https://youtu.be/8K7EO7s_iFE\nBinary search tree traversals: https://youtu.be/k7GkEbECZK0\nBinary search tree code: https://youtu.be/QwrZcySUxK8\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=k7GkEbECZK0",
+          "thumbnail": "https://i.ytimg.com/vi/k7GkEbECZK0/hqdefault.jpg",
+          "duration": "11:58",
+          "uploadDate": "2017-04-23"
+        },
+        {
+          "id": "QwrZcySUxK8",
+          "title": "Binary Search Tree Code",
+          "description": "Related Videos:\nBinary search tree intro: https://youtu.be/JfSdGQdAzq8\nBinary search tree insertions: https://youtu.be/LwpLXm3eb6A\nBinary search tree removals: https://youtu.be/8K7EO7s_iFE\nBinary search tree traversals: https://youtu.be/k7GkEbECZK0\nBinary search tree code: https://youtu.be/QwrZcySUxK8\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=QwrZcySUxK8",
+          "thumbnail": "https://i.ytimg.com/vi/QwrZcySUxK8/hqdefault.jpg",
+          "duration": "13:20",
+          "uploadDate": "2017-04-23"
+        },
+        {
+          "id": "2E54GqF0H4s",
+          "title": "Hash table hash function",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=2E54GqF0H4s",
+          "thumbnail": "https://i.ytimg.com/vi/2E54GqF0H4s/hqdefault.jpg",
+          "duration": "17:21",
+          "uploadDate": "2017-06-11"
+        },
+        {
+          "id": "T9gct6Dx-jo",
+          "title": "Hash table separate chaining",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=T9gct6Dx-jo",
+          "thumbnail": "https://i.ytimg.com/vi/T9gct6Dx-jo/hqdefault.jpg",
+          "duration": "8:14",
+          "uploadDate": "2017-06-11"
+        },
+        {
+          "id": "Av9kwXkuQFw",
+          "title": "Hash table separate chaining source code",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=Av9kwXkuQFw",
+          "thumbnail": "https://i.ytimg.com/vi/Av9kwXkuQFw/hqdefault.jpg",
+          "duration": "11:47",
+          "uploadDate": "2017-06-11"
+        },
+        {
+          "id": "xIejolxzZS8",
+          "title": "Hash table open addressing",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com\n===============================================================================\nDeveloper tools I used in the creation/testing of the content in these videos:\n\n1) Sublime text, my favorite lightweight code editor (https://www.sublimetext.com).\nNOTE: I'm often asked about the color scheme I use, find it here: https://github.com/williamfiset/dotfiles/tree/master/sublime\n\n2) Kite, a free AI-powered coding assistant that provides smart code completions while typing:\nhttps://www.kite.com/get-kite/?utm_medium=referral&utm_source=youtube&utm_campaign=williamfiset&utm_content=description-only\n=============================================================================== ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=xIejolxzZS8",
+          "thumbnail": "https://i.ytimg.com/vi/xIejolxzZS8/hqdefault.jpg",
+          "duration": "11:09",
+          "uploadDate": "2017-06-12"
+        },
+        {
+          "id": "Ma9XOInZJWM",
+          "title": "Hash table linear probing",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=Ma9XOInZJWM",
+          "thumbnail": "https://i.ytimg.com/vi/Ma9XOInZJWM/hqdefault.jpg",
+          "duration": "13:56",
+          "uploadDate": "2017-06-12"
+        },
+        {
+          "id": "b0858c55TGQ",
+          "title": "Hash table quadratic probing",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=b0858c55TGQ",
+          "thumbnail": "https://i.ytimg.com/vi/b0858c55TGQ/hqdefault.jpg",
+          "duration": "9:27",
+          "uploadDate": "2017-06-12"
+        },
+        {
+          "id": "H5e9V5x92vI",
+          "title": "Hash table double hashing",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=H5e9V5x92vI",
+          "thumbnail": "https://i.ytimg.com/vi/H5e9V5x92vI/hqdefault.jpg",
+          "duration": "14:50",
+          "uploadDate": "2017-06-12"
+        },
+        {
+          "id": "7eLDTtbzX4M",
+          "title": "Hash Table Open Addressing Removals",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=7eLDTtbzX4M",
+          "thumbnail": "https://i.ytimg.com/vi/7eLDTtbzX4M/hqdefault.jpg",
+          "duration": "7:33",
+          "uploadDate": "2017-06-12"
+        },
+        {
+          "id": "eer6yW4S4Ts",
+          "title": "Hash table open addressing code",
+          "description": "Related Videos:\nHash table intro/hash function: https://www.youtube.com/watch?v=2E54GqF0H4s\nHash table separate chaining: https://www.youtube.com/watch?v=T9gct6Dx-jo\nHash table separate chaining code: https://www.youtube.com/watch?v=Av9kwXkuQFw\nHash table open addressing: https://www.youtube.com/watch?v=xIejolxzZS8\nHash table linear probing: https://www.youtube.com/watch?v=Ma9XOInZJWM\nHash table quadratic probing: https://www.youtube.com/watch?v=b0858c55TGQ\nHash table double hashing: https://www.youtube.com/watch?v=H5e9V5x92vI\nHash table open addressing removing: https://www.youtube.com/watch?v=7eLDTtbzX4M\nHash table open addressing code: https://www.youtube.com/watch?v=7eLDTtbzX4M\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=eer6yW4S4Ts",
+          "thumbnail": "https://i.ytimg.com/vi/eer6yW4S4Ts/hqdefault.jpg",
+          "duration": "14:42",
+          "uploadDate": "2017-06-12"
+        },
+        {
+          "id": "RgITNht_f4Q",
+          "title": "Fenwick Tree range queries",
+          "description": "Related Videos:\nFenwick tree range queries: https://www.youtube.com/watch?v=RgITNht_f4Q\nFenwick tree point updates: https://www.youtube.com/watch?v=B-BkW9ZpKKM\nFenwick tree construction: https://www.youtube.com/watch?v=BHPez138yX8\nFenwick tree source code: https://www.youtube.com/watch?v=eHSQjEtVUGA\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=RgITNht_f4Q",
+          "thumbnail": "https://i.ytimg.com/vi/RgITNht_f4Q/hqdefault.jpg",
+          "duration": "13:45",
+          "uploadDate": "2017-06-09"
+        },
+        {
+          "id": "B-BkW9ZpKKM",
+          "title": "Fenwick Tree point updates",
+          "description": "Related Videos:\nFenwick tree range queries: https://www.youtube.com/watch?v=RgITNht_f4Q\nFenwick tree point updates: https://www.youtube.com/watch?v=B-BkW9ZpKKM\nFenwick tree construction: https://www.youtube.com/watch?v=BHPez138yX8\nFenwick tree source code: https://www.youtube.com/watch?v=eHSQjEtVUGA\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=B-BkW9ZpKKM",
+          "thumbnail": "https://i.ytimg.com/vi/B-BkW9ZpKKM/hqdefault.jpg",
+          "duration": "4:36",
+          "uploadDate": "2017-06-09"
+        },
+        {
+          "id": "BHPez138yX8",
+          "title": "Fenwick Tree construction",
+          "description": "Related Videos:\nFenwick tree range queries: https://www.youtube.com/watch?v=RgITNht_f4Q\nFenwick tree point updates: https://www.youtube.com/watch?v=B-BkW9ZpKKM\nFenwick tree construction: https://www.youtube.com/watch?v=BHPez138yX8\nFenwick tree source code: https://www.youtube.com/watch?v=eHSQjEtVUGA\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=BHPez138yX8",
+          "thumbnail": "https://i.ytimg.com/vi/BHPez138yX8/hqdefault.jpg",
+          "duration": "6:29",
+          "uploadDate": "2017-06-09"
+        },
+        {
+          "id": "eHSQjEtVUGA",
+          "title": "Fenwick tree source code",
+          "description": "Related Videos:\nFenwick tree range queries: https://www.youtube.com/watch?v=RgITNht_f4Q\nFenwick tree point updates: https://www.youtube.com/watch?v=B-BkW9ZpKKM\nFenwick tree construction: https://www.youtube.com/watch?v=BHPez138yX8\nFenwick tree source code: https://www.youtube.com/watch?v=eHSQjEtVUGA\n\nData Structures Source Code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=eHSQjEtVUGA",
+          "thumbnail": "https://i.ytimg.com/vi/eHSQjEtVUGA/hqdefault.jpg",
+          "duration": "5:42",
+          "uploadDate": "2017-06-09"
+        },
+        {
+          "id": "zqKlL3ZpTqs",
+          "title": "Suffix array introduction",
+          "description": "Related Videos:\nSuffix array intro: https://www.youtube.com/watch?v=zqKlL3ZpTqs\nLongest common prefix (LCP) array: https://www.youtube.com/watch?v=53VIWj8ksyI\nCounting unique substrings: https://www.youtube.com/watch?v=m2lZRmMjebw\nLongest common substring 1/2: https://www.youtube.com/watch?v=Ic80xQFWevc\nLongest common substring 2/2: https://www.youtube.com/watch?v=DTLjHSToxmo\nLongest repeated substring: https://www.youtube.com/watch?v=OptoHwC3D-Y\n\nGithub link:\nhttps://github.com/williamfiset/algorithms\n\nI'm looking for volunteers to review early access versions of my video content pre-recording. If this is something that may interest you please join the following mailing list for further updates:\n\nhttps://groups.google.com/forum/#!forum/williamfiset-youtube/join\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=zqKlL3ZpTqs",
+          "thumbnail": "https://i.ytimg.com/vi/zqKlL3ZpTqs/hqdefault.jpg",
+          "duration": "3:16",
+          "uploadDate": "2017-08-29"
+        },
+        {
+          "id": "53VIWj8ksyI",
+          "title": "Longest Common Prefix (LCP) array",
+          "description": "Related Videos:\nSuffix array intro: https://www.youtube.com/watch?v=zqKlL3ZpTqs\nLongest common prefix (LCP) array: https://www.youtube.com/watch?v=53VIWj8ksyI\nCounting unique substrings: https://www.youtube.com/watch?v=m2lZRmMjebw\nLongest common substring 1/2: https://www.youtube.com/watch?v=Ic80xQFWevc\nLongest common substring 2/2: https://www.youtube.com/watch?v=DTLjHSToxmo\nLongest repeated substring: https://www.youtube.com/watch?v=OptoHwC3D-Y\n\nGithub link:\nhttps://github.com/williamfiset/algorithms\n\nI'm looking for volunteers to review early access versions of my video content pre-recording. If this is something that may interest you please join the following mailing list for further updates:\n\nhttps://groups.google.com/forum/#!forum/williamfiset-youtube/join\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=53VIWj8ksyI",
+          "thumbnail": "https://i.ytimg.com/vi/53VIWj8ksyI/hqdefault.jpg",
+          "duration": "3:30",
+          "uploadDate": "2017-08-29"
+        },
+        {
+          "id": "m2lZRmMjebw",
+          "title": "Suffix array finding unique substrings",
+          "description": "Related Videos:\nSuffix array intro: https://www.youtube.com/watch?v=zqKlL3ZpTqs\nLongest common prefix (LCP) array: https://www.youtube.com/watch?v=53VIWj8ksyI\nCounting unique substrings: https://www.youtube.com/watch?v=m2lZRmMjebw\nLongest common substring 1/2: https://www.youtube.com/watch?v=Ic80xQFWevc\nLongest common substring 2/2: https://www.youtube.com/watch?v=DTLjHSToxmo\nLongest repeated substring: https://www.youtube.com/watch?v=OptoHwC3D-Y\n\nGithub link:\nhttps://github.com/williamfiset/algorithms\n\nKattis link:\nhttps://open.kattis.com/problems/substrings\n\nMy website: http://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=m2lZRmMjebw",
+          "thumbnail": "https://i.ytimg.com/vi/m2lZRmMjebw/hqdefault.jpg",
+          "duration": "4:39",
+          "uploadDate": "2017-08-29"
+        },
+        {
+          "id": "Ic80xQFWevc",
+          "title": "Longest common substring problem suffix array",
+          "description": "Related Videos:\nSuffix array intro: https://www.youtube.com/watch?v=zqKlL3ZpTqs\nLongest common prefix (LCP) array: https://www.youtube.com/watch?v=53VIWj8ksyI\nCounting unique substrings: https://www.youtube.com/watch?v=m2lZRmMjebw\nLongest common substring 1/2: https://www.youtube.com/watch?v=Ic80xQFWevc\nLongest common substring 2/2: https://www.youtube.com/watch?v=DTLjHSToxmo\nLongest repeated substring: https://www.youtube.com/watch?v=OptoHwC3D-Y\n\nLongest common substring implementation:\nhttps://github.com/williamfiset/algorithms\n\nKattis problem:\nhttps://open.kattis.com/problems/lifeforms\n\nMy website:\nhttp://www.williamfiset.com\n===============================================================================\nDeveloper tools I used in the creation/testing of the content in these videos:\n\n1) Sublime text, my favorite lightweight code editor (https://www.sublimetext.com).\nNOTE: I'm often asked about the color scheme I use, find it here: https://github.com/williamfiset/dotfiles/tree/master/sublime\n\n2) Kite, a free AI-powered coding assistant that provides smart code completions while typing:\nhttps://www.kite.com/get-kite/?utm_medium=referral&utm_source=youtube&utm_campaign=williamfiset&utm_content=description-only\n=============================================================================== ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=Ic80xQFWevc",
+          "thumbnail": "https://i.ytimg.com/vi/Ic80xQFWevc/hqdefault.jpg",
+          "duration": "11:30",
+          "uploadDate": "2017-09-04"
+        },
+        {
+          "id": "DTLjHSToxmo",
+          "title": "Longest common substring problem suffix array part 2",
+          "description": "Related Videos:\nSuffix array intro: https://www.youtube.com/watch?v=zqKlL3ZpTqs\nLongest common prefix (LCP) array: https://www.youtube.com/watch?v=53VIWj8ksyI\nCounting unique substrings: https://www.youtube.com/watch?v=m2lZRmMjebw\nLongest common substring 1/2: https://www.youtube.com/watch?v=Ic80xQFWevc\nLongest common substring 2/2: https://www.youtube.com/watch?v=DTLjHSToxmo\nLongest repeated substring: https://www.youtube.com/watch?v=OptoHwC3D-Y\n\nData structures repository:\nhttps://github.com/williamfiset/algorithms\n\nKattis problem:\nhttps://open.kattis.com/problems/lifeforms\n\nMy website: \nhttp://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=DTLjHSToxmo",
+          "thumbnail": "https://i.ytimg.com/vi/DTLjHSToxmo/hqdefault.jpg",
+          "duration": "6:47",
+          "uploadDate": "2017-09-04"
+        },
+        {
+          "id": "OptoHwC3D-Y",
+          "title": "Longest Repeated Substring suffix array",
+          "description": "Related Videos:\nSuffix array intro: https://www.youtube.com/watch?v=zqKlL3ZpTqs\nLongest common prefix (LCP) array: https://www.youtube.com/watch?v=53VIWj8ksyI\nCounting unique substrings: https://www.youtube.com/watch?v=m2lZRmMjebw\nLongest common substring 1/2: https://www.youtube.com/watch?v=Ic80xQFWevc\nLongest common substring 2/2: https://www.youtube.com/watch?v=DTLjHSToxmo\nLongest repeated substring: https://www.youtube.com/watch?v=OptoHwC3D-Y\n\nData structures repository:\nhttps://github.com/williamfiset/algorithms\n\nKattis problem:\nhttps://open.kattis.com/problems/dvaput\n\nMy website: \nhttp://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=OptoHwC3D-Y",
+          "thumbnail": "https://i.ytimg.com/vi/OptoHwC3D-Y/hqdefault.jpg",
+          "duration": "4:38",
+          "uploadDate": "2017-09-04"
+        },
+        {
+          "id": "q4fnJZr8ztY",
+          "title": "Balanced binary search tree rotations",
+          "description": "Learn about balanced binary search tree rotations\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix\n\n===========================\n\nRelated videos:\nAVL tree intro: https://www.youtube.com/watch?v=q4fnJZr8ztY\nAVL tree insertions: https://www.youtube.com/watch?v=1QSYxIKXXP4\nAVL tree removals: https://www.youtube.com/watch?v=g4y2h70D6Nk\nAVL tree code: https://www.youtube.com/watch?v=tqFZzXkbbGY\n\nAVL tree source code:\nhttps://github.com/williamfiset/algorithms",
+          "url": "https://www.youtube.com/watch?v=q4fnJZr8ztY",
+          "thumbnail": "https://i.ytimg.com/vi/q4fnJZr8ztY/hqdefault.jpg",
+          "duration": "8:51",
+          "uploadDate": "2017-11-13"
+        },
+        {
+          "id": "1QSYxIKXXP4",
+          "title": "AVL tree insertion",
+          "description": "Related videos:\nAVL tree intro: https://www.youtube.com/watch?v=q4fnJZr8ztY\nAVL tree insertions: https://www.youtube.com/watch?v=1QSYxIKXXP4\nAVL tree removals: https://www.youtube.com/watch?v=g4y2h70D6Nk\nAVL tree code: https://www.youtube.com/watch?v=tqFZzXkbbGY\n\nAVL tree source code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: \nhttp://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=1QSYxIKXXP4",
+          "thumbnail": "https://i.ytimg.com/vi/1QSYxIKXXP4/hqdefault.jpg",
+          "duration": "9:36",
+          "uploadDate": "2017-11-13"
+        },
+        {
+          "id": "g4y2h70D6Nk",
+          "title": "AVL tree removals",
+          "description": "Related videos:\nAVL tree intro: https://www.youtube.com/watch?v=q4fnJZr8ztY\nAVL tree insertions: https://www.youtube.com/watch?v=1QSYxIKXXP4\nAVL tree removals: https://www.youtube.com/watch?v=g4y2h70D6Nk\nAVL tree code: https://www.youtube.com/watch?v=tqFZzXkbbGY\n\nAVL tree source code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: \nhttp://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=g4y2h70D6Nk",
+          "thumbnail": "https://i.ytimg.com/vi/g4y2h70D6Nk/hqdefault.jpg",
+          "duration": "8:56",
+          "uploadDate": "2017-11-13"
+        },
+        {
+          "id": "tqFZzXkbbGY",
+          "title": "AVL tree source code",
+          "description": "Related videos:\nAVL tree intro: https://www.youtube.com/watch?v=q4fnJZr8ztY\nAVL tree insertions: https://www.youtube.com/watch?v=1QSYxIKXXP4\nAVL tree removals: https://www.youtube.com/watch?v=g4y2h70D6Nk\nAVL tree code: https://www.youtube.com/watch?v=tqFZzXkbbGY\n\nAVL tree source code:\nhttps://github.com/williamfiset/algorithms\n\nMy website: \nhttp://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=tqFZzXkbbGY",
+          "thumbnail": "https://i.ytimg.com/vi/tqFZzXkbbGY/hqdefault.jpg",
+          "duration": "16:49",
+          "uploadDate": "2017-11-13"
+        },
+        {
+          "id": "jND_WJ8r7FE",
+          "title": "Indexed Priority Queue (UPDATED) | Data Structures",
+          "description": "Indexed priority queue data structure explanation and code\n\nSource code:\nhttps://github.com/williamfiset/algorithms\n\nVideo slides:\nhttps://github.com/williamfiset/algorithms/tree/master/slides/datastructures/priorityqueue\n\nPriority Queue Series:\nhttps://www.youtube.com/playlist?list=PLDV1Zeh2NRsCLFSHm1nYb9daYf60lCcag\n\nPersonal website: \nhttp://www.williamfiset.com\n\nAudio intro/outro composed by Richard Saney (rnsaney@gmail.com)",
+          "url": "https://www.youtube.com/watch?v=jND_WJ8r7FE",
+          "thumbnail": "https://i.ytimg.com/vi/jND_WJ8r7FE/hqdefault.jpg",
+          "duration": "25:22",
+          "uploadDate": "2020-04-19"
+        },
+        {
+          "id": "wuuiiGg_2x0",
+          "title": "Indexed Priority Queue | Data Structure | Source Code",
+          "description": "Previous explaination video: https://youtu.be/DT8xZ0Uf8wo\n\nSource code:\nhttps://github.com/williamfiset/algorithms\n\nVideo slides:\nhttps://github.com/williamfiset/Algorithms/tree/master/slides/datastructures/priorityqueue\n\nPersonal website: \nhttp://www.williamfiset.com\n\nAudio intro/outro composed by Richard Saney (rnsaney@gmail.com)",
+          "url": "https://www.youtube.com/watch?v=wuuiiGg_2x0",
+          "thumbnail": "https://i.ytimg.com/vi/wuuiiGg_2x0/hqdefault.jpg",
+          "duration": "8:34",
+          "uploadDate": "2018-06-18"
+        },
+        {
+          "id": "uUatD9AudXo",
+          "title": "Sparse Table Data Structure",
+          "description": "Source code repository:\nhttps://github.com/williamfiset/algorithms\n\nVideo slides:\nhttps://github.com/williamfiset/algorithms/tree/master/slides\n\nWebsite:\nhttp://www.williamfiset.com ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=uUatD9AudXo",
+          "thumbnail": "https://i.ytimg.com/vi/uUatD9AudXo/hqdefault.jpg",
+          "duration": "23:18",
+          "uploadDate": "2020-03-20"
+        },
+        {
+          "id": "ESRJgwbwzf4",
+          "title": "Sparse Table Data Structure | Source Code",
+          "description": "Sparse Table explanation video:\nhttps://youtu.be/uUatD9AudXo\n\nCode in this video:\nhttps://github.com/williamfiset/Algorithms/tree/master/src/main/java/com/williamfiset/algorithms/datastructures/sparsetable/examples\n\nGeneric Sparse Table implementation:\nhttps://github.com/williamfiset/Algorithms/tree/master/src/main/java/com/williamfiset/algorithms/datastructures/sparsetable\n\nSource code repository:\nhttps://github.com/williamfiset/algorithms\n\nVideo slides:\nhttps://github.com/williamfiset/algorithms/tree/master/slides\n\nWebsite:\nhttp://www.williamfiset.com\n\nAudio intro/outro composed by Richard Saney (rnsaney@gmail.com) ===================================\n\nPracticing for interviews? I have used, and recommend `Cracking the Coding Interview` which got me a job at Google. Link on Amazon: https://amzn.to/3cvMof5\n\nA lot of the content on this channel is inspired by the book `Competitive Programming` by Steven Halim which I frequently use as a resource and reference. Link on Amazon: https://amzn.to/3wC2nix",
+          "url": "https://www.youtube.com/watch?v=ESRJgwbwzf4",
+          "thumbnail": "https://i.ytimg.com/vi/ESRJgwbwzf4/hqdefault.jpg",
+          "duration": "7:16",
+          "uploadDate": "2020-03-23"
+        }
+      ],
+      "tags": [],
+      "created": "2025-04-18",
+      "lastUpdated": "2025-04-18"
     }
   ]
 }
